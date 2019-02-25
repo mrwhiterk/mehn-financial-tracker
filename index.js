@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'))
 app.use(methodOverride("_method"))
 
-// app.use(require('./routes/index'))
+app.use(require('./routes/index'))
 
 app.set('port', process.env.PORT || 3001)
 
