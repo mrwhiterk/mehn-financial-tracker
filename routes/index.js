@@ -5,7 +5,12 @@ const {
 } = require('../models/index')
 
 router.get('/', (req, res) => {
-  res.send('hello world')
+  Account.find({})
+    .then(accounts => {
+      res.render('index', {
+        accounts
+      })
+    })
 })
 
 module.exports = router

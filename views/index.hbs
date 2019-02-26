@@ -1,0 +1,15 @@
+{{#if accounts}}
+<h1>Accounts</h1>
+<ul class="accounts">
+  {{#each accounts}}
+  <div class="account">
+    <div class="account-title">
+      <a href="">{{ name }}</a>
+      <a href="">{{ type }}</a>
+      <a href="">{{ lastFour }}</a>
+      <a href="">{{ balance }}</a>
+    </div>
+  </div>
+  {{/each}}
+</ul>
+{{/if}}

@@ -5,7 +5,7 @@ const hbs = require("hbs")
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 
-app.set('view-engine', 'hbs')
+app.set('view engine', 'hbs')
 app.use(bodyParser.urlencoded({
   extended: true
 }))
