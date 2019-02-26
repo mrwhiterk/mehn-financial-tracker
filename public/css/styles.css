@@ -1,0 +1,30 @@
+:root {
+  --main-bg-color: rgb(228, 228, 228);
+}
+
+.navbar {
+  background-color: var(--main-bg-color) !important;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  border: 1px solid var(--main-bg-color);
+}
+
+.grid-container {
+  display: grid;
+  width: 50vw;
+  grid-template-columns: auto auto auto auto;
+  /* background-color: var(--main-bg-color); */
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: var(--main-bg-color);
+  padding: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}

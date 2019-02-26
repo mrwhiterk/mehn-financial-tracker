@@ -2,13 +2,11 @@
 <h1>Accounts</h1>
 <ul class="accounts">
   {{#each accounts}}
-  <div class="account">
-    <div class="account-title">
-      <a href="account/show/{{id}}">{{ name }}</a>
-      <span href="">{{ type }}</span>
-      <span href="">x-{{ lastFour }}</span>
-      <span href="">${{ balance }}</span>
-    </div>
+  <div class="grid-container">
+    <div class="grid-item"><a href="account/show/{{id}}">{{ name }}</a></div>
+    <div class="grid-item">{{ type }}</div>
+    <div class="grid-item">X-{{ lastFour }}</div>
+    <div class="grid-item">{{ balance }}</div>
   </div>
   {{/each}}
 </ul>
