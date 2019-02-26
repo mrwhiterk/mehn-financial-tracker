@@ -4,13 +4,18 @@ const {
   Account
 } = require('../models/index')
 
+const authenticatedUser = require('../utils/authenticatedUser')
+
 router.get('/', (req, res) => {
   Account.find({})
     .then(accounts => {
       res.render('index', {
-        accounts
+        accounts,
+        success: req.flash("success")
       })
     })
 })
+
+router.use(require('./user'))
 
 module.exports = router
