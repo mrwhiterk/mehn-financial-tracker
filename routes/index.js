@@ -18,4 +18,5 @@ router.get('/', (req, res) => {
 
 router.use(require('./user'))
 
+router.use('/account', require('./account.js'))
 module.exports = router

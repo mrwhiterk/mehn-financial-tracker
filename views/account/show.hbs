@@ -1,9 +1,9 @@
-{{#if accounts}}
-<h1>Accounts</h1>
+<h1>Account Show</h1>
+{{#if account}}
 <ul class="accounts">
   {{#each accounts}}
   <div class="grid-container">
-    <div class="grid-item"><a href="account/{{id}}">{{ name }}</a></div>
+    <div class="grid-item"><a href="account/show/{{id}}">{{ name }}</a></div>
     <div class="grid-item">{{ type }}</div>
     <div class="grid-item">X-{{ lastFour }}</div>
     <div class="grid-item">{{ balance }}</div>

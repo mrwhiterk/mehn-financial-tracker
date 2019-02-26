@@ -18,7 +18,6 @@ main {
   display: grid;
   width: 50vw;
   grid-template-columns: auto auto auto auto;
-  /* background-color: var(--main-bg-color); */
   padding: 10px;
 }
 
