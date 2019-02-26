@@ -4,10 +4,10 @@
   {{#each accounts}}
   <div class="account">
     <div class="account-title">
-      <a href="">{{ name }}</a>
-      <a href="">{{ type }}</a>
-      <a href="">{{ lastFour }}</a>
-      <a href="">{{ balance }}</a>
+      <a href="account/show/{{id}}">{{ name }}</a>
+      <span href="">{{ type }}</span>
+      <span href="">x-{{ lastFour }}</span>
+      <span href="">${{ balance }}</span>
     </div>
   </div>
   {{/each}}
