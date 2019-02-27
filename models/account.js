@@ -1,21 +1,13 @@
 const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
-
-const TransactionSchema = new Schema({
-  name: String,
-  type: String,
-  detail: String,
-  price: Number
-}, {
-  timestamps: true
-})
+const Transaction = require('./transaction')
 
 const AccountSchema = new Schema({
   name: String,
   type: String,
   lastFour: Number,
   balance: Number,
-  transactions: [TransactionSchema]
+  transactions: [Transaction]
 }, {
   timestamps: true
 })

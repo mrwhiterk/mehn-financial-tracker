@@ -2,5 +2,6 @@ const mongoose = require('../db/connection')
 
 module.exports = {
   Account: mongoose.model("Account", require("./account")),
-  User: mongoose.model("User", require("./user"))
+  User: mongoose.model("User", require("./user")),
+  Transaction: mongoose.model("Transaction", require("./transaction")),
 }

@@ -17,6 +17,6 @@ router.get('/', (req, res) => {
 })
 
 router.use(require('./user'))
-
 router.use('/account', require('./account.js'))
+router.use('/transaction', require('./transaction'))
 module.exports = router
