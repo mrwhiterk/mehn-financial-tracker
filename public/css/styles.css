@@ -16,14 +16,14 @@ main {
 
 .grid-container {
   display: grid;
-  width: 50vw;
+  width: 40vw;
   grid-template-columns: auto auto auto auto;
-  padding: 10px;
+  padding: 1%;
 }
 
 .grid-item {
   background-color: var(--main-bg-color);
-  padding: 20px;
-  font-size: 1.5rem;
+  padding: 2%;
+  font-size: 1.2rem;
   text-align: center;
 }

@@ -27,10 +27,10 @@ module.exports = {
   },
   create: (req, res) => {
     Account.create({
-      name: req.body.blogPost.name,
-      type: req.body.blogPost.type,
-      lastFour: req.body.blogPost.lastFour,
-      balance: req.body.blogPost.balance
+      name: req.body.account.name,
+      type: req.body.account.type,
+      lastFour: req.body.account.lastFour,
+      balance: req.body.account.balance
     }).then(_ => {
       res.redirect("/")
     })
