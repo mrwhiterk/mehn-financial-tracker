@@ -12,6 +12,7 @@ a {
 
 main {
   border: 1px solid var(--main-bg-color);
+  padding: 2%;
 }
 
 .grid-container {

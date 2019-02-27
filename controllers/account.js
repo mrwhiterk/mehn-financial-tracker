@@ -15,7 +15,6 @@ module.exports = {
       })
   },
   show: (req, res) => {
-    console.log('show hit')
     Account.findOne({
         _id: req.params.id
       })
@@ -51,6 +50,13 @@ module.exports = {
         if (err) return res.status(500).send(err)
         res.redirect(`/account/${account._id}`)
       })
+    })
+  },
+  delete: (req, res) => {
+    Account.findByIdAndRemove({
+      _id: req.params.id
+    }).then(account => {
+      res.redirect('/')
     })
   }
 
