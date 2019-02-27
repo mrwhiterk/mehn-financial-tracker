@@ -51,7 +51,7 @@
       </div>
       <div class="modal-body">
 
-        <form action="/transaction" method="post">
+        <form action="/transaction/{{account._id}}" method="post">
           <p class="input-field">
             <textarea name="transaction[name]" cols="30" rows="1" placeholder="name"></textarea>
             <textarea name="transaction[type]" cols="30" rows="1" placeholder="type"></textarea>
