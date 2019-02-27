@@ -8,7 +8,20 @@ Account.remove({})
           name: "bank of america",
           type: "checking",
           lastFour: 8554,
-          balance: 500
+          balance: 500,
+          transactions: [{
+              name: "Denny's",
+              type: "debit",
+              detail: "Dinner",
+              price: 7.99
+            },
+            {
+              name: "Tech City",
+              type: "debit",
+              detail: "computer",
+              price: 340.99
+            }
+          ]
         },
         {
           name: "chase",

@@ -22,6 +22,30 @@ main {
   padding: 1%;
 }
 
+.grid-container-3 {
+  display: grid;
+  width: 40vw;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-container-transactions {
+  display: grid;
+  width: 40vw;
+  grid-template-columns: auto auto auto auto;
+  border: 1px solid black;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-container-transactions .grid-item {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+  padding: 1%;
+  background-color: white;
+  margin: 0;
+}
+
 .grid-item {
   background-color: var(--main-bg-color);
   padding: 2%;

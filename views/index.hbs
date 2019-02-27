@@ -1,15 +1,15 @@
 {{#if accounts}}
 <h3>Accounts</h3>
-<ul class="accounts">
-  {{#each accounts}}
-  <div class="grid-container">
-    <div class="grid-item"><a href="account/{{id}}">{{ name }}</a></div>
-    <div class="grid-item">{{ type }}</div>
-    <div class="grid-item">X-{{ lastFour }}</div>
-    <div class="grid-item">{{ balance }}</div>
-  </div>
-  {{/each}}
-</ul>
+
+{{#each accounts}}
+<div class="grid-container">
+  <div class="grid-item"><a href="account/{{id}}">{{ name }}</a></div>
+  <div class="grid-item">{{ type }}</div>
+  <div class="grid-item">X-{{ lastFour }}</div>
+  <div class="grid-item">{{ balance }}</div>
+</div>
+{{/each}}
+
 {{/if}}
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addModal">
