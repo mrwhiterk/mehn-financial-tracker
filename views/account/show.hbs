@@ -2,12 +2,24 @@
 <h2>{{ account.name }}</h2>
 
 <div class="grid-container-3">
-  {{!-- <div class="grid-item"><a href="account/show/{{id}}">{{ account.name }}</a></div> --}}
   <div class="grid-item">{{ account.type }}</div>
   <div class="grid-item">X-{{ account.lastFour }}</div>
-  <div class="grid-item">{{ account.balance }}</div>
+  <div class="grid-item">${{ account.balance }}</div>
+  <div class="grid-item"><a data-toggle="modal" data-target="#editModal" class="linkBtn">edit</a></div>
+  <form action="/account/{{account._id}}?_method=DELETE" method="post">
+    <div class="grid-item"><button type="submit" class="linkBtn">delete</button></div>
+  </form>
+
 </div>
 
+<div class="grid-container-transactions sub-text">
+  <div class="grid-item">Name</div>
+  <div class="grid-item">Type</div>
+  <div class="grid-item">Detail</div>
+  <div class="grid-item">Price</div>
+</div>
+
+{{#if account.transactions}}
 {{#each account.transactions}}
 <div class="grid-container-transactions">
   <div class="grid-item">{{ name }}</div>
@@ -16,14 +28,19 @@
   <div class="grid-item">{{ price }}</div>
 </div>
 {{/each}}
+{{else}}
+<div class="grid-container-transactions">
+  <div class="grid-item"> - No Data to display - </div>
+</div>
+{{/if}}
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editModal">
+{{!-- <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editModal">
   Edit
-</button>
+</button> --}}
 
-<form action="/account/{{account._id}}?_method=DELETE" method="post">
+{{!-- <form action="/account/{{account._id}}?_method=DELETE" method="post">
   <button type="submit" class="btn btn-danger">Delete</button>
-</form>
+</form> --}}
 <!-- Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
