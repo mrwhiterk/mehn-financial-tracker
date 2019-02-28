@@ -2,6 +2,12 @@
 <h3>Accounts</h3>
 <div class="flex-container">
   <div>
+    <div class="grid-container-acct-header sub-text">
+      <div class="grid-item">Name</div>
+      <div class="grid-item">Type</div>
+      <div class="grid-item">Acct #</div>
+      <div class="grid-item">Bal</div>
+    </div>
     {{#each accounts}}
     <div class="grid-container">
       <div class="grid-item"><a href="account/{{id}}">{{ name }}</a></div>
