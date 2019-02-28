@@ -15,14 +15,19 @@ module.exports = {
       })
   },
   show: (req, res) => {
-    Transaction.findOne({
-        _id: req.params.id
+    Account.findOne({
+      _id: req.params.accountId
+    }).then(account => {
+      var transaction;
+      account.transactions.forEach(trans => {
+        if (trans._id == req.params.id) {
+          transaction = trans
+        }
       })
-      .exec((err, transaction) => {
-        res.render('transaction/show', {
-          transaction
-        })
+      res.render('transaction/show', {
+        transaction
       })
+    })
   },
   create: (req, res) => {
 
