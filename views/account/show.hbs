@@ -1,7 +1,7 @@
 {{#if account}}
 <h2>{{ account.name }}</h2>
 
-<div class="grid-container-3">
+<div class="grid-container-3" id="grid-container-header">
   <div class="grid-item">{{ account.type }}</div>
   <div class="grid-item">X-{{ account.lastFour }}</div>
   <div class="grid-item">${{ account.balance }}</div>
@@ -30,11 +30,11 @@
 {{/each}}
 {{else}}
 <div class="grid-container-transactions">
-  <div class="grid-item"> - No Data to display - </div>
+  <div>- No Entries -</div>
 </div>
 {{/if}}
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addTransactionModal">
+<button type="button" class="btn btn-secondary btn-margin" data-toggle="modal" data-target="#addTransactionModal">
   Add Transaction
 </button>
 
