@@ -25,7 +25,8 @@ module.exports = {
         }
       })
       res.render('transaction/show', {
-        transaction
+        transaction,
+        account
       })
     })
   },
@@ -53,19 +54,39 @@ module.exports = {
     res.render('transaction/new')
   },
   update: (req, res) => {
-    Transaction.findOne({
-      _id: req.params.id
-    }).then(transaction => {
-      transaction.name = req.body.transaction.name
-      transaction.type = req.body.transaction.type
-      transaction.lastFour = req.body.transaction.lastFour
-      transaction.balance = req.body.transaction.balance
-
-      transaction.save(err => {
-        if (err) return res.status(500).send(err)
-        res.redirect(`/transaction/${transaction._id}`)
+    let {
+      name,
+      type,
+      detail,
+      price
+    } = req.body.transaction
+    Account.findOne({
+      _id: req.params.accountId
+    }).then(account => {
+      var transaction;
+      account.transactions.forEach(trans => {
+        if (trans._id == req.params.id) {
+          transaction = trans
+        }
       })
+
+      transaction.name = name
+      transaction.type = type
+      transaction.detail = detail
+      transaction.price = price
+
+      account.save(err => {
+        if (err) return res.status(500).send(err)
+
+        res.render('transaction/show', {
+          transaction,
+          account
+        })
+      })
+
+
     })
+
   },
   delete: (req, res) => {
     Transaction.findByIdAndRemove({
