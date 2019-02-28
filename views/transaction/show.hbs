@@ -27,7 +27,10 @@
       <div class="modal-body">
         <form action="/transaction/{{account.id}}/{{transaction.id}}?_method=PUT" method="post" class="row">
           <textarea name="transaction[name]" cols="30" rows="1">{{transaction.name}}</textarea>
-          <textarea name="transaction[type]" cols="30" rows="1">{{transaction.type}}</textarea>
+          <select name="transaction[type]">
+            <option value="debit">debit</option>
+            <option value="credit">credit</option>
+          </select>
           <textarea name="transaction[detail]" cols="30" rows="1">{{transaction.detail}}</textarea>
           <textarea name="transaction[price]" cols="30" rows="1">{{transaction.price}}</textarea>
           <div class="modal-footer">

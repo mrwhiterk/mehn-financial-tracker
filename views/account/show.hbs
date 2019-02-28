@@ -55,7 +55,10 @@
         <form action="/transaction/{{account._id}}" method="post">
           <p class="input-field">
             <textarea name="transaction[name]" cols="30" rows="1" placeholder="name"></textarea>
-            <textarea name="transaction[type]" cols="30" rows="1" placeholder="type"></textarea>
+            <select name="transaction[type]">
+              <option value="debit">debit</option>
+              <option value="credit">credit</option>
+            </select>
             <textarea name="transaction[detail]" cols="30" rows="1" placeholder="detail"></textarea>
             <textarea name="transaction[price]" cols="30" rows="1" placeholder="price"></textarea>
             <div class="modal-footer">
