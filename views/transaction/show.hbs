@@ -6,7 +6,7 @@
   <div>Price: {{formatNumber transaction.price style="currency" currency="USD"}}</div>
 </div>
 <div class="grid-item">
-  <a data-toggle="modal" data-target="#editTransactionModal" class="btn btn-secondary">
+  <a data-toggle="modal" data-target="#editTransactionModal" class="btn btn-success white">
     edit
   </a>
   <form action="/transaction/{{account.id}}/{{transaction.id}}?_method=DELETE" method="post">
