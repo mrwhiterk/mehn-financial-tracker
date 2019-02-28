@@ -3,7 +3,7 @@
 <div>
   <div>Type: {{ transaction.type }}</div>
   <div>Details: {{ transaction.detail }}</div>
-  <div>Price: {{ transaction.price }}</div>
+  <div>Price: {{formatNumber transaction.price style="currency" currency="USD"}}</div>
 </div>
 <div class="grid-item">
   <a data-toggle="modal" data-target="#editTransactionModal" class="btn btn-secondary">
@@ -30,7 +30,7 @@
             <p class="input-field">
               <label for="name">Name</label>
               <input name="transaction[name]" value="{{transaction.name}}">
-            </p><br />
+            </p>
           </div>
           <div>
             <p class="input-field">

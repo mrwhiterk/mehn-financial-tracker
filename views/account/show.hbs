@@ -4,7 +4,7 @@
 <div class="grid-container-3" id="grid-container-header">
   <div class="grid-item">{{ account.type }}</div>
   <div class="grid-item">X-{{ account.lastFour }}</div>
-  <div class="grid-item">${{ account.balance }}</div>
+  <div class="grid-item">{{formatNumber account.balance style="currency" currency="USD"}}</div>
   <div class="grid-item"><a data-toggle="modal" data-target="#editModal" class="linkBtn">edit</a></div>
   <form action="/account/{{account._id}}?_method=DELETE" method="post">
     <div class="grid-item"><button type="submit" class="linkBtn">delete</button></div>
@@ -17,6 +17,7 @@
   <div class="grid-item">Type</div>
   <div class="grid-item">Detail</div>
   <div class="grid-item">Price</div>
+  <div class="grid-item"></div>
 </div>
 
 {{#if account.transactions}}
@@ -25,7 +26,7 @@
   <div class="grid-item">{{ name }}</div>
   <div class="grid-item">{{ type }}</div>
   <div class="grid-item">{{ detail }}</div>
-  <div class="grid-item">{{ price }}</div>
+  <div class="grid-item">{{formatNumber price style="currency" currency="USD"}}</div>
   <div class="grid-item"><a href="/transaction/{{../account.id}}/{{id}}">View</a></div>
 </div>
 {{/each}}

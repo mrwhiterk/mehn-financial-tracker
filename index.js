@@ -12,6 +12,10 @@ const session = require("express-session")
 const passport = require("passport")
 const LocalStrategy = require("passport-local").Strategy
 
+var Handlebars = require('handlebars');
+var HandlebarsIntl = require('handlebars-intl');
+HandlebarsIntl.registerWith(hbs);
+
 app.set('view engine', 'hbs')
 
 app.use(bodyParser.urlencoded({

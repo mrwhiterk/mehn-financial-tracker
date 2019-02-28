@@ -6,7 +6,7 @@
   <div class="grid-item"><a href="account/{{id}}">{{ name }}</a></div>
   <div class="grid-item">{{ type }}</div>
   <div class="grid-item">X-{{ lastFour }}</div>
-  <div class="grid-item">{{ balance }}</div>
+  <div class="grid-item">{{formatNumber balance style="currency" currency="USD"}}</div>
 </div>
 {{/each}}
 
