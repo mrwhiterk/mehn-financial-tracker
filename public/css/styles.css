@@ -82,3 +82,13 @@ main {
 .btn-margin {
   margin-top: 1%;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 10px;
+}
+
+.flex-container * {
+  margin-right: 2%;
+}

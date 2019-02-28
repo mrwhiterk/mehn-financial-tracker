@@ -1,15 +1,19 @@
 {{#if accounts}}
 <h3>Accounts</h3>
-
-{{#each accounts}}
-<div class="grid-container">
-  <div class="grid-item"><a href="account/{{id}}">{{ name }}</a></div>
-  <div class="grid-item">{{ type }}</div>
-  <div class="grid-item">X-{{ lastFour }}</div>
-  <div class="grid-item">{{formatNumber balance style="currency" currency="USD"}}</div>
+<div class="flex-container">
+  <div>
+    {{#each accounts}}
+    <div class="grid-container">
+      <div class="grid-item"><a href="account/{{id}}">{{ name }}</a></div>
+      <div class="grid-item">{{ type }}</div>
+      <div class="grid-item">X-{{ lastFour }}</div>
+      <div class="grid-item">{{formatNumber balance style="currency" currency="USD"}}</div>
+    </div>
+    {{/each}}
+  </div>
+  <div>Networth: {{formatNumber networth style="currency" currency="USD"}}</div>
 </div>
-{{/each}}
-<p>Networth: {{formatNumber networth style="currency" currency="USD"}}</p>
+
 
 {{/if}}
 <!-- Button trigger modal -->
