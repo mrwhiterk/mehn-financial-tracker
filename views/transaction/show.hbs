@@ -9,6 +9,9 @@
   <a data-toggle="modal" data-target="#editTransactionModal" class="btn btn-secondary">
     edit
   </a>
+  <form action="/transaction/{{account.id}}/{{transaction.id}}?_method=DELETE" method="post">
+    <div class="grid-item"><button type="submit" class="btn btn-danger">delete</button></div>
+  </form>
 </div>
 
 <div class="modal fade" id="editTransactionModal" tabindex="-1" role="dialog"

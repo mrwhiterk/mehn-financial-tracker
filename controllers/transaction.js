@@ -89,10 +89,16 @@ module.exports = {
 
   },
   delete: (req, res) => {
-    Transaction.findByIdAndRemove({
-      _id: req.params.id
-    }).then(transaction => {
-      res.redirect('/')
+    Account.findOne({
+      _id: req.params.accountId
+    }).then(account => {
+      let transaction = account.transactions.find(x => x.id == req.params.id)
+      account.transactions.splice(account.transactions.indexOf(transaction), 1)
+
+      account.save(err => {
+        if (err) return res.status(500).send(err)
+        res.redirect(`/account/${account.id}`)
+      })
     })
   }
 
