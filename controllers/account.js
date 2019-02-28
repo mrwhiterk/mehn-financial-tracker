@@ -19,8 +19,15 @@ module.exports = {
         _id: req.params.id
       })
       .exec((err, account) => {
-        res.render('account/show', {
-          account
+        let total = 0
+        account.transactions.map(x => total += x.price)
+        account.balance = total
+        account.save(err => {
+          if (err) return res.status(500).send(err)
+
+          res.render('account/show', {
+            account
+          })
         })
       })
   },
@@ -29,7 +36,7 @@ module.exports = {
       name: req.body.account.name,
       type: req.body.account.type,
       lastFour: req.body.account.lastFour,
-      balance: req.body.account.balance
+      balance: 0
     }).then(_ => {
       res.redirect("/")
     })
