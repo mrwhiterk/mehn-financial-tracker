@@ -56,22 +56,23 @@
         <form action="/transaction/{{account._id}}" method="post">
           <p class="input-field">
             <label for="name">Name</label>
-            <input name="transaction[name]" placeholder="name">
+            <input name="transaction[name]" placeholder="name" class="form-control input-lg" require>
           </p>
           <p class="input-field">
             <label for="type">Type</label>
-            <select name="transaction[type]">
+            <select name="transaction[type]" class="form-control input-lg">
               <option value="debit">debit</option>
               <option value="credit">credit</option>
             </select>
           </p>
           <p class="input-field">
             <label for="detail">Detail</label>
-            <textarea name="transaction[detail]" cols="30" rows="1" placeholder="detail"></textarea>
+            <textarea name="transaction[detail]" cols="30" rows="1" placeholder="detail" class="form-control input-lg"
+              required></textarea>
           </p>
           <p class="input-field">
             <label for="price">Price</label>
-            <textarea name="transaction[price]" cols="30" rows="1" placeholder="price"></textarea>
+            <input name="transaction[price]" placeholder="price" class="form-control input-lg" required>
           </p>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
