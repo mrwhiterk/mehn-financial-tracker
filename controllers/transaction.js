@@ -7,9 +7,15 @@ const {
 
 module.exports = {
   index: (req, res) => {
-    Transaction.find({})
-      .then(transactions => {
-        res.render("index", {
+    let transactions = []
+    Account.find({})
+      .then(accounts => {
+        accounts.map(account => {
+          account.transactions.map(transaction => {
+            transactions.push(transaction)
+          })
+        })
+        res.render("transaction/index", {
           transactions
         })
       })

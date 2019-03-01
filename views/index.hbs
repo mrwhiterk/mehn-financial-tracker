@@ -17,7 +17,15 @@
     </div>
     {{/each}}
   </div>
-  <div>Networth: {{formatNumber networth style="currency" currency="USD"}}</div>
+  <div style="width: 300px">
+    <h3>Networth: {{formatNumber networth style="currency" currency="USD"}}</h3>
+    <div>
+      <a href="transaction/">
+        <button class="btn btn-success">View All Transactions</button>
+      </a>
+    </div>
+
+  </div>
 </div>
 
 

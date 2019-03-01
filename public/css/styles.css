@@ -106,3 +106,8 @@ main {
 .white {
   color: white !important;
 }
+
+.btn-success a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,11 @@
+<h3>All transactions</h3>
+{{#if transactions}}
+{{#each transactions}}
+<div class="grid-container">
+  <div class="grid-item">{{ name }}</div>
+  <div class="grid-item">{{ type }}</div>
+  <div class="grid-item">{{ detail }}</div>
+  <div class="grid-item">{{formatNumber price style="currency" currency="USD"}}</div>
+</div>
+{{/each}}
+{{/if}}
