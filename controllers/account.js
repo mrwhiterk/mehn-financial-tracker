@@ -51,7 +51,6 @@ module.exports = {
       account.name = req.body.account.name
       account.type = req.body.account.type
       account.lastFour = req.body.account.lastFour
-      account.balance = req.body.account.balance
 
       account.save(err => {
         if (err) return res.status(500).send(err)
