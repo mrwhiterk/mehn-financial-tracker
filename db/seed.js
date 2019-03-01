@@ -8,7 +8,7 @@ Account.remove({})
           name: "bank of america",
           type: "checking",
           lastFour: 8554,
-          balance: 500,
+          balance: 0,
           transactions: [{
               name: "Denny's",
               type: "debit",
@@ -27,13 +27,13 @@ Account.remove({})
           name: "chase",
           type: "savings",
           lastFour: 9054,
-          balance: 800
+          balance: 0
         },
         {
           name: "One Main",
           type: "credit card",
           lastFour: 3414,
-          balance: 200
+          balance: 0
         }
       ])
       .then(accounts => {
