@@ -8,9 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Install Node
-Install Npm
-Install Mongo DB
+Install Node, Npm, and Mongo
 
 ### Installing
 
