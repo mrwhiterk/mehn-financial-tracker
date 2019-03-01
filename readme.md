@@ -16,13 +16,9 @@ Install Mongo DB
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of instructions of how to get your development environment running
 
-Say what the step will be
-
-```
 Open up your terminal to where you want to put this project.
-```
 
 ```
 cd ~/Desktop/projects
@@ -40,10 +36,8 @@ cd mehn-financial-tracker
 npm install
 ```
 
-```
 Open up separate terminal. If you haven't ran the mongo daemon process yet, run 'mongod'
 If you have already, you can test by typing 'mongo'. If you get a prompt with '>', then your good to proceed.
-```
 
 Go back to your previous terminal and seed your database with 'node db/seed.js', you should see object like data printed to your console if done correctly.
 
@@ -61,11 +55,11 @@ I used Heroku with Mongo DB Atlas to deploy this application.
 
 ## Built With
 
-- [Node](http://node.io) - Server Run-time
-- [Npm](https://npm.com) - Dependency Management
+- [Node](https://nodejs.org/en/) - Server Run-time
+- [Npm](https://www.npmjs.com/) - Dependency Management
 - [Express](https://expressjs.com/) - The web framework used
-- [HandleBars](https://handlebars.com/) - Used to generate HTML templates
-- [Mongo](https://mongo.com) - Database
+- [HandleBars](https://handlebarsjs.com/) - Used to generate HTML templates
+- [Mongo](https://www.mongodb.com/) - Database
 
 ## Contributing
 
