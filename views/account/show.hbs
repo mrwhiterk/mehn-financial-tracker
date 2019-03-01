@@ -93,10 +93,19 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="/account/{{account.id}}?_method=PUT" method="post" class="row">
-          <textarea name="account[name]" cols="30" rows="1">{{account.name}}</textarea>
-          <textarea name="account[type]" cols="30" rows="1">{{account.type}}</textarea>
-          <textarea name="account[lastFour]" cols="30" rows="1">{{account.lastFour}}</textarea>
+        <form action="/account/{{account.id}}?_method=PUT" method="post">
+          <p class="input-field">
+            <label for="name">Name</label>
+            <input name="account[name]" class="form-control input-lg" value="{{account.name}}" required>
+          </p>
+          <p class="input-field">
+            <label for="type">Type</label>
+            <input name="account[type]" class="form-control input-lg" value="{{account.type}}" required>
+          </p>
+          <p class="input-field">
+            <label for="lastFour">Acct #</label>
+            <input name="account[lastFour]" class="form-control input-lg" value="{{account.lastFour}}" required>
+          </p>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
