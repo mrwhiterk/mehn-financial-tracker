@@ -25,32 +25,28 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="/transaction/{{account.id}}/{{transaction.id}}?_method=PUT" method="post" class="row">
-          <div>
-            <p class="input-field">
-              <label for="name">Name</label>
-              <input name="transaction[name]" value="{{transaction.name}}">
-            </p>
-          </div>
-          <div>
-            <p class="input-field">
-              <label for="type">Type</label>
-              <select name="transaction[type]">
-                <option value="debit">debit</option>
-                <option value="credit">credit</option>
-              </select>
-            </p>
-
-          </div>
+        <form action="/transaction/{{account.id}}/{{transaction.id}}?_method=PUT" method="post">
+          <p class="input-field">
+            <label for="name">Name</label>
+            <input name="transaction[name]" value="{{transaction.name}}" class="form-control input-lg" required>
+          </p>
+          <p class="input-field">
+            <label for="type">Type</label>
+            <select name="transaction[type]" class="form-control input-lg" required>
+              <option value="debit">debit</option>
+              <option value="credit">credit</option>
+            </select>
+          </p>
           <p class="input-field">
             <label for="detail">Detail</label>
-            <textarea name="transaction[detail]" cols="30" rows="1">{{transaction.detail}}</textarea>
+            <textarea name="transaction[detail]" cols="30" rows="1" class="form-control input-lg"
+              required>{{transaction.detail}}</textarea>
           </p>
           <p class="input-field">
             <label for="price">Price</label>
-            <textarea name="transaction[price]" cols="30" rows="1">{{transaction.price}}</textarea>
+            <textarea name="transaction[price]" cols="30" rows="1" class="form-control input-lg"
+              required>{{transaction.price}}</textarea>
           </p>
-
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save changes</button>
