@@ -6,7 +6,7 @@ const {
 
 const authenticatedUser = require('../utils/authenticatedUser')
 
-router.get('/', (req, res) => {
+router.get('/', authenticatedUser, (req, res) => {
   Account.find({})
     .then(accounts => {
       let networth = 0
@@ -20,6 +20,6 @@ router.get('/', (req, res) => {
 })
 
 router.use(require('./user'))
-router.use('/account', require('./account.js'))
-router.use('/transaction', require('./transaction'))
+router.use('/account', authenticatedUser, require('./account.js'))
+router.use('/transaction', authenticatedUser, require('./transaction'))
 module.exports = router
