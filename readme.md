@@ -1,6 +1,6 @@
-# Project Title
+# Money Moves
 
-One Paragraph of project description goes here
+This is a application for tracking your expenses, understanding your spending habits, and ultimately how it affects your networth. You will be able to login and securely track your accounts with an interface that's not so precise as to create a security concern, for instance, if the server was to be comprimised. There is no PII request from users. The overall goal of this project was to empower a user to better utilize their income and work towards creating wealth.
 
 ## Getting Started
 
@@ -8,10 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-Give examples
+Install Node
+Install Npm
+Install Mongo DB
 ```
 
 ### Installing
@@ -21,60 +21,59 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+Open up your terminal to where you want to put this project.
 ```
 
-And repeat
-
 ```
-until finished
+cd ~/Desktop/projects
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
 ```
-Give an example
+git clone https://github.com/mrwhiterk/mehn-financial-tracker.git
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+```
+cd mehn-financial-tracker
+```
 
 ```
-Give an example
+npm install
 ```
+
+```
+Open up separate terminal. If you haven't ran the mongo daemon process yet, run 'mongod'
+If you have already, you can test by typing 'mongo'. If you get a prompt with '>', then your good to proceed.
+```
+
+Go back to your previous terminal and seed your database with 'node db/seed.js', you should see object like data printed to your console if done correctly.
+
+```
+run 'node index.js'
+```
+
+Visit the specified port in your browser
+
+Congrats! Now, you should have a fully working copy on your development environment
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+I used Heroku with Mongo DB Atlas to deploy this application.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- [Node](http://node.io) - Server Run-time
+- [Npm](https://npm.com) - Dependency Management
+- [Express](https://expressjs.com/) - The web framework used
+- [HandleBars](https://handlebars.com/) - Used to generate HTML templates
+- [Mongo](https://mongo.com) - Database
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+- **Ryan White** - [PurpleBooth](https://github.com/PurpleBooth)
 
 ## License
 
@@ -82,7 +81,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
+- Thanks Mint.com for being my inspiration and my favorite financial management site!
