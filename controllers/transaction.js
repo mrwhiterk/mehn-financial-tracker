@@ -8,15 +8,18 @@ const {
 module.exports = {
   index: (req, res) => {
     let transactions = []
+    let networth = 0
     Account.find({})
       .then(accounts => {
         accounts.map(account => {
           account.transactions.map(transaction => {
+            networth += transaction.price
             transactions.push(transaction)
           })
         })
         res.render("transaction/index", {
-          transactions
+          transactions,
+          networth
         })
       })
   },
