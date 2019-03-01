@@ -3,6 +3,8 @@ const router = express.Router()
 const transactionController = require("../controllers/transaction")
 
 router.get('/', transactionController.index)
+router.get('/credit', transactionController.findCredits)
+router.get('/debit', transactionController.findDebits)
 router.get("/new", transactionController.new)
 router.post("/:accountId", transactionController.create)
 router.get("/:accountId/:id", transactionController.show)

@@ -23,6 +23,44 @@ module.exports = {
         })
       })
   },
+  findCredits: (req, res) => {
+    let transactions = []
+    let networth = 0
+    Account.find({})
+      .then(accounts => {
+        accounts.map(account => {
+          account.transactions.map(transaction => {
+            if (transaction.price >= 0) {
+              networth += transaction.price
+              transactions.push(transaction)
+            }
+          })
+        })
+        res.render("transaction/index", {
+          transactions,
+          networth
+        })
+      })
+  },
+  findDebits: (req, res) => {
+    let transactions = []
+    let networth = 0
+    Account.find({})
+      .then(accounts => {
+        accounts.map(account => {
+          account.transactions.map(transaction => {
+            if (transaction.price < 0) {
+              networth += transaction.price
+              transactions.push(transaction)
+            }
+          })
+        })
+        res.render("transaction/index", {
+          transactions,
+          networth
+        })
+      })
+  },
   show: (req, res) => {
     Account.findOne({
       _id: req.params.accountId
